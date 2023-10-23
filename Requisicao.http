@@ -1,0 +1,51 @@
+### Cadastrando novo usuario
+POST http://localhost:3600/users HTTP/1.1
+content-type: application/json
+
+{
+   "firstName": "Katiane",
+   "lastName": "Almeida",
+   "email": "katiane@mail.com",
+   "password": "123456"
+}
+### Obtendo todos os usuarios
+GET http://localhost:3600/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ODcyODk4ODliMzg5ZmM5NTkzMjUiLCJlbWFpbCI6ImFudGhvbnlAbWFpbC5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiQW50aG9ueSBHYWJyaWVsIiwicmVmcmVzaEtleSI6Im1ROFdIUWdXc29HMjI1bEVtK2dvU0E9PSIsImlhdCI6MTY5Nzk0NDgzN30.qY7m7wE8Jb0AigpASIoXJKopNW_HyCJQ_Jh8P8Kmbwo
+
+### Obtendo usuario por id
+GET http://localhost:3600/users/653487289889b389fc959325
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ODcyODk4ODliMzg5ZmM5NTkzMjUiLCJlbWFpbCI6ImFudGhvbnlAbWFpbC5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiQW50aG9ueSBHYWJyaWVsIiwicmVmcmVzaEtleSI6Im1ROFdIUWdXc29HMjI1bEVtK2dvU0E9PSIsImlhdCI6MTY5Nzk0NDgzN30.qY7m7wE8Jb0AigpASIoXJKopNW_HyCJQ_Jh8P8Kmbwo
+
+
+### Obtendo todos os usuarios - User PAId (Supervisor)
+GET http://localhost:3600/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ODcyODk4ODliMzg5ZmM5NTkzMjUiLCJlbWFpbCI6ImFudGhvbnlAbWFpbC5jb20iLCJwZXJtaXNzaW9uTGV2ZWwiOjQsInByb3ZpZGVyIjoiZW1haWwiLCJuYW1lIjoiQW50aG9ueSBHYWJyaWVsIiwicmVmcmVzaEtleSI6Im1ROFdIUWdXc29HMjI1bEVtK2dvU0E9PSIsImlhdCI6MTY5Nzk0NDgzN30.qY7m7wE8Jb0AigpASIoXJKopNW_HyCJQ_Jh8P8Kmbwo
+
+
+### Autenticacao - ADMIN 2048
+POST http://localhost:3600/auth HTTP/1.1
+content-type: application/json
+
+{
+  "email": "anthony@mail.com",
+  "password": "123456"
+}
+
+### Autenticacao - USER 1
+POST http://localhost:3600/auth HTTP/1.1
+content-type: application/json
+
+{
+  "email": "katiane@mail.com",
+  "password": "123456"
+}
+
+### Update
+PATCH http://localhost:3600/users/653487289889b389fc959325
+content-type: application/json
+
+{
+	"firstName": "Anthony",
+	"lastName": "Gabriel",
+	"permissionLevel": 4
+}
